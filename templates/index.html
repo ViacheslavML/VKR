@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ВКР</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <form action="/" class="decor" method="post" enctype="multipart/form-data">
+      <div class="form-left-decoration"></div>
+      <div class="form-right-decoration"></div>
+      <div class="circle"></div>
+      <div class="form-inner">
+        <h1>Прогноз соотношение матрица - наполнитель</h1>
+        <h2>Результат прогноза: {{result}}</h2>
+        {% if error %}
+        <h1>Ошибка в переменной " {{error['name']}} ", невозможно преобразовать в число значение " {{error['value']}} "</h1>
+        {% endif %}
+        <input type="text" placeholder="Плотность, кг/м3" name="Плотность, кг/м3">
+        <input type="text" placeholder="Модуль упругости, ГПа" name="Модуль упругости, ГПа">
+        <input type="text" placeholder="Количество отвердителя, м.%" name="Количество отвердителя, м.%">
+        <input type="text" placeholder="Содержание эпоксидных групп,%_2" name="Содержание эпоксидных групп,%_2">
+        <input type="text" placeholder="Температура вспышки, С_2" name="Температура вспышки, С_2">
+        <input type="text" placeholder="Поверхностная плотность, г/м2" name="Поверхностная плотность, г/м2">
+        <input type="text" placeholder="Потребление смолы, г/м2" name="Потребление смолы, г/м2">
+        <input type="text" placeholder="Угол нашивки, град" name="Угол нашивки, град">
+        <input type="text" placeholder="Шаг нашивки" name="Шаг нашивки">
+        <input type="text" placeholder="Плотность нашивки" name="Плотность нашивки">
+        <button type="submit" href="/">Рассчитать</button>
+      </div>
+    </form>
+  </body>
+</html>
